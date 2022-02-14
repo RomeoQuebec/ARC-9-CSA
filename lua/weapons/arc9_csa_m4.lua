@@ -83,7 +83,7 @@ SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 
-SWEP.DropMagazineModel = "models/weapons/arc9/droppedmags/m4_mag_30.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel = "models/weapons/arc9/droppedmags/m16_mag_30.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {
     "weapons/arc9_ud/common/rifle_magdrop_1.ogg", "weapons/arc9_ud/common/rifle_magdrop_2.ogg", "weapons/arc9_ud/common/rifle_magdrop_3.ogg", "weapons/arc9_ud/common/rifle_magdrop_4.ogg"
 }  -- Table of sounds a dropped magazine should play.
@@ -343,10 +343,11 @@ SWEP.AttachmentElements = {
             {5, 1}
         }
     },
-    ["m4_upper_a3"] = {
+    ["m4_upper_sbsnc"] = {
         Bodygroups = {
-            {1, 1},
-            {3, 3}
+            {4, 1},
+            {2, 1},
+            {3, 5}
         },
     },
     ["m4_upper_a1"] = {
@@ -379,7 +380,7 @@ SWEP.AttachmentElements = {
             {3, 2}
         },
     },
-    ["m4_barrel_ris"] = {
+    ["m4_barrel_lmg"] = {
         Bodygroups = {
             {3, 3}
         },
@@ -469,7 +470,7 @@ SWEP.Attachments = {
         DefaultName = "Factory Flash Hider",
         Category = "muzzle",
         Bone = "pistol",
-        Pos = Vector(5, -3.5, 29.75),
+        Pos = Vector(0, -3.5, 23),
         Ang = Angle(90, 0, -90),
     },
     {
@@ -502,7 +503,7 @@ SWEP.Attachments = {
         Category = "mount_barrel",
         ExcludeElements = {"nomount"},
         Bone = "pistol",
-        Pos = Vector(0, -3, 26),
+        Pos = Vector(0, -3, 18),
         Ang = Angle(90, 0, -90),
     },
     {
@@ -510,7 +511,7 @@ SWEP.Attachments = {
         Category = {"m4lp"},
         Bone = "pistol",
         ExcludeElements = {"fpw"},
-        Pos = Vector(0, -6, 25),
+        Pos = Vector(0, -6, 18),
         Ang = Angle(90, 0, -90),
     },
 }

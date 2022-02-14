@@ -6,17 +6,17 @@ $bodygroup "studio"
 {
 	studio "m4a1_low.smd" // 0
 }
-$bodygroup "1"
+$bodygroup "magwell_1"
 {
 	studio "m4a1_well.smd" // 0
 }
-$bodygroup "2"
+$bodygroup "upper_2"
 {
 	studio "m4a1_up.smd" // 0
 	studio "m4a1_up_hb.smd" // 1
 	blank
 }
-$bodygroup "3"
+$bodygroup "handguard_3"
 {
 	studio "m4a1_hg.smd" // 0
 	studio "m4a1_hg_a1.smd" // 1
@@ -25,13 +25,13 @@ $bodygroup "3"
 	studio "m4a1_hg_patriot.smd" // 4			
 	blank
 }
-$bodygroup "4"
+$bodygroup "ironsights_4"
 {
 	studio "m4a1_top_iron.smd" // 0	
 	studio "m4a1_iron_hb.smd" // 1	
 	blank
 }
-$bodygroup "5"
+$bodygroup "magazines_5"
 {
 	studio "m4a1_mag.smd" // 0
 	studio "m4a1_mag_20.smd" // 1	
@@ -40,7 +40,7 @@ $bodygroup "5"
 	studio "m4a1_mag_9mmx.smd" //4
 	blank
 }
-$bodygroup "6"
+$bodygroup "stocks_6"
 {
 	studio "m4a1_stock.smd" // 0
 	studio "m4a1_stock_a1.smd" // 1
@@ -48,7 +48,7 @@ $bodygroup "6"
 	studio "m4a1_stock_buff.smd" // 3	
 	studio "m4a1_stock_hb.smd" // 4	
 }
-$bodygroup "7"
+$bodygroup "grips_7"
 {
 	studio "m4a1_grip.smd" // 0
 	studio "m4a1_grip_ske.smd" // 1
@@ -119,6 +119,24 @@ $sequence "reload" {
 
 $sequence "reload_dry" {
 	"anims\reload_dry.smd"
+	activity "ACT_VM_RELOAD_EMPTY" 1
+	fadein 1
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$sequence "reload_drum" {
+	"anims\reload_wet2_drum.smd"
+	activity "ACT_VM_RELOAD" 1
+	fadein 1
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$sequence "reload_dry_drum" {
+	"anims\reload_dry_drum.smd"
 	activity "ACT_VM_RELOAD_EMPTY" 1
 	fadein 1
 	fadeout 0.2

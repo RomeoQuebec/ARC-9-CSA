@@ -29,42 +29,41 @@ $bodygroup "stuff_idk_5"
 	studio "m9_stuff_idk.smd" // 0
 	blank
 }
-$bodygroup "sights_5"
+$bodygroup "sights_6"
 {
 	studio "m9_sights.smd" // 0
 	blank
 }
-$bodygroup "mag_6"
+$bodygroup "mag_7"
 {
 	studio "m9_mag.smd" // 0
 	blank
 }
-$bodygroup "barrel_7"
+$bodygroup "barrel_8"
 {
 	studio "m9_barrel.smd" // 0
 	studio "m9_barrel_raff.smd" //1		
 	blank
 }
-$bodygroup "slide_8"
+$bodygroup "slide_9"
 {
 	studio "m9_slide.smd" // 0
 }
-$bodygroup "conversion_9"
+$bodygroup "conversion_10"
 {
 	blank
-	studio "m9_conv_alyx.smd" // 0
-	studio "m9_conv_ext.smd"	// 1
+	studio "m9_conv_alyx.smd" // 1
+	studio "m9_conv_ext.smd"	// 2
 }
-$bodygroup "hammer_10"
+$bodygroup "hammer_11"
 {
 	studio "m9_hammer.smd" // 0
-	studio "m9_hammer_ext.smd"	// 1
-	studio "m9_hammer_raff.smd" // 2	
+	studio "m9_hammer_ext.smd"	// 1	
 }
-$bodygroup "stock_11"
+$bodygroup "stock_12"
 {
 	blank
-	studio "m9_stock.smd" // 0
+	studio "m9_stock.smd" // 1
 }
 
 $illumposition 0 0 0

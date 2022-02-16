@@ -180,7 +180,7 @@ SWEP.TracerColor = Color(255, 225, 200) -- Color of tracers. Only works if trace
 
 SWEP.IronSights = {
     Pos = Vector(-5.66, -5.625, 1.889),
-    Ang = Angle(0.277, 0, 0),
+    Ang = Angle(0, 0, 0),
     Midpoint = { -- Where the gun should be at the middle of it's irons
         Pos = Vector(0, 15, -4),
         Ang = Angle(0, 0, -45),
@@ -220,8 +220,8 @@ SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 local path = ")^weapons/elite/"
 SWEP.FirstShootSound = path .. "elite-1.wav"
-SWEP.ShootSound = path .. "elite_unsil-1.wav"
-SWEP.DistantShootSound = path .. "dist.ogg"
+SWEP.ShootSound = path .. "elite-1.wav"
+SWEP.DistantShootSound = "weapons/m16a2/dist.ogg"
 SWEP.ShootSoundSilencedFirst = "weapons/usp/usp1.wav"
 SWEP.ShootSoundSilenced = "weapons/usp/usp1.wav"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
@@ -339,87 +339,37 @@ SWEP.Animations = {
 -------------------------- ATTACHMENTS
 
 SWEP.AttachmentElements = {
-    ["m9_mag_20"] = {
+    ["m9_barrel_raff"] = {
         Bodygroups = {
-            {5, 1}
+            {8, 1},
+            {11, 1}
         }
     },
-    ["m9_mag_drum"] = {
+    ["m9_low_raff"] = {
         Bodygroups = {
-            {5, 2}
+            {0, 1}
         }
     },
-    ["m9_upper_sbsnc"] = {
+    ["m9_conv_ext"] = {
         Bodygroups = {
-            {4, 1},
-            {2, 1},
-            {3, 5}
+            {10, 2},
+            {11, 1}
         },
     },
-    ["m9_upper_a1"] = {
+    ["m9_stock"] = {
         Bodygroups = {
-            {3, 1}
+            {11, 1}
         },
     },
-    ["m9_upper_a2"] = {
+    ["m9_no_sights"] = {
         Bodygroups = {
-            {3, 2}
+            {5, 0}
         },
     },
-    ["m9_grip_skeleton"] = {
+    ["m9_conv_alyx"] = {
         Bodygroups = {
-            {7, 1}
-        }
-    },
-    ["m9_grip_wood"] = {
-        Bodygroups = {
-            {7, 2}
-        }
-    },
-    ["m9_barrel_a1"] = {
-        Bodygroups = {
-            {3, 1}
-        },
-    },
-    ["m9_barrel_wood"] = {
-        Bodygroups = {
-            {3, 2}
-        },
-    },
-    ["m9_barrel_lmg"] = {
-        Bodygroups = {
-            {3, 3}
-        },
-    },
-    ["m9_upper_subsonic"] = {
-        Bodygroups = {
-            {2, 1},
-            {4, 1},
-        }
-    },
-    ["stock_buffertube"] = {
-        Bodygroups = {
-            {6, 3}
-        }
-    },
-    ["m9_stock_solid"] = {
-        Bodygroups = {
-            {6, 1}
-        }
-    },
-    ["m9_stock_wire"] = {
-        Bodygroups = {
-            {6, 4}
-        }
-    },
-    ["m9_stock_m607"] = {
-        Bodygroups = {
-            {6, 2}
-        }
-    },
-    ["m9_stock_wood"] = {
-        Bodygroups = {
-            {6, 3}
+            {10, 1},
+            {11, 1}
         }
     }
 }
@@ -434,41 +384,30 @@ end
 
 SWEP.Attachments = {
     {
-        PrintName = "RECEIVER",
-        DefaultName = "RAI RC83 Upper",
-        DefaultCompactName = "RC83UPPER",
-        DefaultName_TrueName = "Colt m9A2 Upper",
-        DefaultCompactName_TrueName = "A2UPPER",
-        Category = "m9_upper",
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0, -3, 1.5),
-        Ang = Angle(90, 0, -90),
-    },
-    {
         PrintName = "MOUNT",
         Category = "mount_m9ch",
         Bone = "ValveBiped.Base",
         ExcludeElements = {"flattop"},
-        Pos = Vector(0, -5.15, 3.5),
+        Pos = Vector(0, -3.15, 0),
         Ang = Angle(90, 0, -90),
     },
     {
-        PrintName = "TUBE",
-        DefaultName = "Buffer Tube",
+        PrintName = "NOSTOCK",
+        DefaultName = "No Stock",
         Category = {"m9_stock", "bt_stock"},
         Bone = "ValveBiped.Base",
-        Pos = Vector(0, -4, -5.5),
+        Pos = Vector(0, 3, -5.5),
         Ang = Angle(90, 0, -90),
     },
     {
         PrintName = "BARREL",
         DefaultName = "RAI Ribbed 20\" Barrel",
-        DefaultCompactName = "20\"RIB",
-        DefaultName_TrueName = "Colt m9A2 20\" Barrel",
+        DefaultCompactName = "FACTORY",
+        DefaultName_TrueName = "Factory Barrel",
         DefaultCompactName_TrueName = "20\"A2",
         Category = {"m9_barrel"},
         Bone = "ValveBiped.Base",
-        Pos = Vector(0, -3.5, 15),
+        Pos = Vector(0, -2.5, 4),
         Ang = Angle(90, 0, -90),
     },
     {
@@ -476,7 +415,7 @@ SWEP.Attachments = {
         DefaultName = "Factory Flash Hider",
         Category = "muzzle",
         Bone = "ValveBiped.Base",
-        Pos = Vector(0, -3.5, 23),
+        Pos = Vector(0.03, -2.5, 6.2),
         Ang = Angle(90, 0, -90),
     },
     {
@@ -484,7 +423,7 @@ SWEP.Attachments = {
         DefaultName = "Standard 30 Round",
         Category = "m9_mag",
         Bone = "ValveBiped.Base",
-        Pos = Vector(0, 0, 6),
+        Pos = Vector(0, 4, -2),
         Ang = Angle(90, 0, -90),
     },
     {
@@ -492,7 +431,7 @@ SWEP.Attachments = {
         DefaultName = "Standard FMJ",
         Category = {"ammo", "ammo_assault"},
         Bone = "ValveBiped.Base",
-        Pos = Vector(0, 1, 7),
+        Pos = Vector(0, 2.2, -2.7),
         Ang = Angle(90, 0, -90),
     },
     {
@@ -501,23 +440,7 @@ SWEP.Attachments = {
         ExcludeElements = {"gripstock"},
         Category = "m9_grip",
         Bone = "ValveBiped.Base",
-        Pos = Vector(0, 0, 1.5),
+        Pos = Vector(0, -1.1, -1.9),
         Ang = Angle(90, 0, -90),
-    },
-    {
-        PrintName = "MOUNT",
-        Category = "mount_barrel",
-        ExcludeElements = {"nomount"},
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0, -3, 18),
-        Ang = Angle(90, 0, -90),
-    },
-    {
-        PrintName = "IRONS",
-        Category = {"m9lp"},
-        Bone = "ValveBiped.Base",
-        ExcludeElements = {"fpw"},
-        Pos = Vector(0, -6, 18),
-        Ang = Angle(90, 0, -90),
-    },
+    }
 }

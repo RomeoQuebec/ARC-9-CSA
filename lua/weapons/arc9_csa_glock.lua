@@ -5,42 +5,42 @@ SWEP.Base = "arc9_base"
 SWEP.Spawnable = true
 SWEP.Category = "ARC-9"
 
-SWEP.PrintName = "Elite Pistol"
-SWEP.TrueName = "Beretta M9"
+SWEP.PrintName = "ASTN 9X19MM Sidearm"
+SWEP.TrueName = "Glock"
 
 SWEP.CamQCA = 3
-SWEP.CamOffsetAng = Angle(0, 0, 90)
+SWEP.CamOffsetAng = Angle(0, 0, 0)
 
 SWEP.Class = "Pistol"
 SWEP.Trivia = {
-    Manufacturer = "Fabbrica d'Armi Pietro Beretta S.p.A.",
+    Manufacturer = "Glock Ges.m.b.H.",
     Calibre = "9x19mm Parabellum",
-    Mechanism = "Striker-fired",
-    Country = "Italy",
-    Year = "1985"
+    Mechanism = "Straight blowback",
+    Country = "Austria",
+    Year = "1982"
 }
 
 SWEP.Credits = {
     Author = "Arqu",
 }
 
-SWEP.Description = [[The Beretta M9, officially the Pistol, Semiautomatic, 9mm, M9, is the designation for the Beretta 92FS semi-automatic Pistol used by the United States Armed Forces. The M9 was adopted by the United States military as their service Pistol in 1985.]]
+SWEP.Description = [[Glock is a brand of polymer-framed, short recoil-operated, locked-breech semi-automatic pistols designed and produced by Austrian manufacturer Glock Ges.m.b.H. The firearm entered Austrian military and police service by 1982 after it was the top performer in reliability and safety tests.]]
 
 if !ARC9:UseTrueNames() then
 
 SWEP.Trivia = {
     Manufacturer = "The Classic & Superb Firearms Company",
     Calibre = "9x19mm Parabellum",
-    Mechanism = "Striker-fired",
-    Country = "Italy",
-    Year = "1985"
+    Mechanism = "Straight blowback",
+    Country = "Austria",
+    Year = "1982"
 }
 
 SWEP.Description = [[Who the fuck reads this anyways.]]
 
 end
 
-SWEP.ViewModel = "models/weapons/arc9/csa/c_elite.mdl"
+SWEP.ViewModel = "models/weapons/arccw/slog_csanal/c_gluke.mdl"
 SWEP.WorldModel = "models/weapons/w_pis_m9.mdl"
 
 SWEP.Slot = 1
@@ -49,8 +49,8 @@ SWEP.DrawCrosshair = true
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(-7.5, 4, -7.5),
-    Ang = Angle(-5, 0, 180),
+    pos = Vector(-5, -1.5, -3.5),
+    ang = Angle(-10, 0, 180),
     Scale = 1
 }
 
@@ -91,7 +91,7 @@ SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 800
+SWEP.RPM = 900
 
 -- Works different to ArcCW
 
@@ -179,17 +179,17 @@ SWEP.TracerColor = Color(255, 225, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-5.66, -5.625, 1.889),
-    Ang = Angle(0, 0, 0),
+    Pos = Vector(-2.481, 0, 0.92),
+    Ang = Angle(0.503, 0, 0),
     Midpoint = { -- Where the gun should be at the middle of it's irons
-        Pos = Vector(0, 15, -4),
-        Ang = Angle(0, 0, -45),
+        Pos = Vector(-2.481, 10, 0.92),
+        Ang = Angle(0.503, 0, 0),
     },
     Magnification = 1.1,
 }
 
-SWEP.SprintAng = Angle(-0.038, 47.219, 0)
-SWEP.SprintPos = Vector(0.597, 0, -12.742)
+SWEP.SprintAng = Angle(0, 47.571, 0)
+SWEP.SprintPos = Vector(1.559, 3.133, -8.551)
 
 SWEP.ActivePos = Vector(0, 2, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
@@ -203,8 +203,8 @@ SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "Pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_AR2
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
+SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_PISTOL
 SWEP.AnimDraw = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
 -------------------------- EFFECTS
@@ -218,161 +218,137 @@ SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 -------------------------- SOUNDS
 
-local path = ")^weapons/elite/"
-SWEP.FirstShootSound = path .. "elite-1.wav"
-SWEP.ShootSound = path .. "elite-1.wav"
-SWEP.DistantShootSound = "weapons/m16a2/dist.ogg"
-SWEP.ShootSoundSilencedFirst = "weapons/usp/usp1.wav"
-SWEP.ShootSoundSilenced = "weapons/usp/usp1.wav"
+SWEP.FirstShootSound = "weapons/arccw_slog/csa/gluke/fire.ogg"
+SWEP.ShootSound = "weapons/arccw_slog/csa/gluke/fire.ogg"
+SWEP.DistantShootSound = "weapons/arccw_slog/fortuna/pistol/echo.wav"
+SWEP.ShootSoundSilencedFirst = "weapons/arccw_slog/fortuna/pistol/sd.wav"
+SWEP.ShootSoundSilenced = "weapons/arccw_slog/fortuna/pistol/sd.wav"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
 
 SWEP.FiremodeSound = "arc9/firemode.wav"
 
-/*
- SWEP.Hook_TranslateAnimation = function(swep, anim)
-    local elements = swep:GetElements()
-
-    if elements["m9_mag_drum"] then
-        return anim .. "_drum"
-    elseif elements["m9_mag_tape"] then
-        return anim .. "_tape"
-    elseif elements["m9_mag_belt"] then
-        return anim .. "_belt"
-    end
-end 
-*/
-
 SWEP.Animations = {
-    ["idle"] = {
-        Source = "idle",
-    },
-    ["draw"] = {
-        Source = "deploy",
-        EventTable = {
-            {s = "weapons/glock/glock_slideback.wav", t = 0.0},
-            {s = path .. "elite_sliderelease.wav", t = 0.5},
-        },
-    },
-    
+    ["idle"] = {Source = "idle",},
+    ["offhand"] = {Source = "offhand",},	
+    ["idle_empty"] = {Source = "idle_empty",},
+    ["ready"] = {Source = "draw",},
+    ["draw"] = {Source = "draw",},
+    ["draw_empty"] = {Source = "draw_empty",},	
     ["fire"] = {
         Source = "fire",
-        Time = 13 / 30,
-        ShellEjectAt = 0.01,
+        ShellEjectAt = 0,
     },
     ["fire_iron"] = {
-        Source = "fire_ads",
-        Time = 13 / 30,
-        ShellEjectAt = 0.01,
+        Source = "iron",
+        ShellEjectAt = 0,
     },
-    -- 30 Round Reloads --
-
+    ["fire_empty"] = {
+        Source = "fire_last",
+        ShellEjectAt = 0,
+    },
+    ["fire_iron_empty"] = {
+        Source = "iron_last",
+        ShellEjectAt = 0,
+    },
     ["reload"] = {
-        Source = "reload",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 1.75,
-        EventTable = {
-            {s = path .. "elite_clipout.wav", t = 0.0},
-            {s = path .. "elite_leftclipin.wav", t = 0.75},
-        },
-        MinProgress = 1.5,
-        LastClip1OutTime = 0.9,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+        Source = "wet",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKOut = 0.5,
+        LHIKEaseOut = 0.25,		
     },
     ["reload_empty"] = {
-        Source = "reload_dry",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 2,
-        EventTable = {
-            {s = path .. "elite_clipout.wav", t = 0.0},
-            {s = path .. "elite_leftclipin.wav", t = 0.8},
-            {s = path .. "elite_sliderelease.wav", t = 1.5},
-        },
-        MinProgress = 2,
-        LastClip1OutTime = 0.7,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        
+        Source = "dry",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKOut = 0.5,
+        LHIKEaseOut = 0.25,		
     },
+    ["reload_x"] = {
+        Source = "wet_x",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKOut = 0.5,
+        LHIKEaseOut = 0.25,		
+    },
+    ["reload_empty_x"] = {
+        Source = "dry_x",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKOut = 0.4,
+        LHIKEaseOut = 0.25,		
+    },
+    ["reload_drum"] = {
+        Source = "wet_drum",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKOut = 0.5,
+        LHIKEaseOut = 0.25,		
+    },
+    ["reload_empty_drum"] = {
+        Source = "dry_drum",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKOut = 0.3,	
+    },	
 }
 
 -------------------------- ATTACHMENTS
 
-SWEP.AttachmentElements = {
-    ["m9_barrel_raff"] = {
-        Bodygroups = {
-            {8, 1},
-            {11, 1}
-        }
+SWEP.AttachmentElements = {	
+    ["rail"] = {Bodygroups = {{ 3, 1},},	},
+    ["slog_csa_gluke_grip"] = {Bodygroups = {{ 4, 1},},},	
+	
+    ["slog_csa_gluke_stock"] = {Bodygroups = {{5, 1},},},
+    ["slog_csa_gluke_stock_rh5b"] = {Bodygroups = {{5, 4},},},	
+    ["slog_csa_gluke_stock_r57"] = {Bodygroups = {{5, 3},},},	
+    ["slog_csa_gluke_stock_rm4"] = {Bodygroups = {{5, 5},},},		
+	
+    ["slog_csa_gluke_slide_18"] = {
+        Bodygroups = {{ 1,  1},},
+        Override_IronSightStruct = {Pos = Vector(-2.481, 10, 0.92),Ang = Angle(0, 0, 0),Magnification = 1.1,},			
     },
-    ["m9_low_raff"] = {
+    ["slog_csa_gluke_slide_sd"] = {
+        Bodygroups = {{ 1,  3},},
+        Override_IronSightStruct = {Pos = Vector(-2.481, 10, 0.92),Ang = Angle(0, 0, 0),Magnification = 1.1,},	
+        AttPosMods = {[5] = {vpos = Vector(0, -0.6, 7.5)}},			
+    },	
+    ["slog_csa_gluke_slide_roni"] = {
+        AttPosMods = {
+		[1] = {vpos = Vector(0, -4.65, 1.2)},
+		[2] = {vpos = Vector(0, -3.15, 10)},		
+		[5] = {vpos = Vector(1, -2.85, 6), vang = Angle(90, 0, 0),}
+		},	
         Bodygroups = {
-            {0, 1}
-        }
-    },
-    ["m9_conv_ext"] = {
+            {1, 2},
+            {3, 2},		
+            {5, 2},					
+        },
+        Override_ActivePos = Vector(1, 2, -0.5),
+        Override_CrouchPos = Vector(-2, 2, -0.5),	
+        Override_CrouchAng = Angle(0, 0, -10),		
+        Override_HolsterPos = Vector(2,5,-4),
+        Override_HolsterAng = Angle(7.036, 30.016, -30),	
+        Override_IronSightStruct = {Pos = Vector(-2.481, 5, -0.7),Ang = Angle(0, 0, 0),Magnification = 1.1,},		
+    },	
+    ["slog_csa_gluke_mag_x"] = {
         Bodygroups = {
-            {10, 2},
-            {11, 1}
+            {2, 1},
         },
     },
-    ["m9_stock"] = {
+    ["slog_csa_gluke_mag_drum"] = {
         Bodygroups = {
-            {11, 1}
+            {2, 2},
         },
-    },
-    ["m9_no_sights"] = {
-        Bodygroups = {
-            {5, 0}
-        },
-    },
-    ["m9_conv_alyx"] = {
-        Bodygroups = {
-            {10, 1},
-            {11, 1}
-        }
-    }
+    },	
 }
+
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local vm = wep:GetOwner():GetViewModel()
@@ -386,43 +362,43 @@ SWEP.Attachments = {
     {
         PrintName = "MOUNT",
         Category = "mount_m9ch",
-        Bone = "ValveBiped.Base",
+        Bone = "W_Main",
         ExcludeElements = {"flattop"},
-        Pos = Vector(0, -3.15, 0),
+        Pos = Vector(0, -4.65, 2),
         Ang = Angle(90, 0, -90),
     },
     {
         PrintName = "NOSTOCK",
         DefaultName = "No Stock",
-        Category = {"m9_stock", "bt_stock"},
-        Bone = "ValveBiped.Base",
+        Category = {"csa_gluke_stock"},
+        Bone = "W_Main",
         Pos = Vector(0, 3, -5.5),
         Ang = Angle(90, 0, -90),
     },
     {
-        PrintName = "BARREL",
-        DefaultName = "RAI Ribbed 20\" Barrel",
+        PrintName = "SLIDE",
+        DefaultName = "Factory Barrel",
         DefaultCompactName = "FACTORY",
         DefaultName_TrueName = "Factory Barrel",
-        DefaultCompactName_TrueName = "20\"A2",
-        Category = {"m9_barrel"},
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0, -2.5, 4),
+        DefaultCompactName_TrueName = "FACTORY",
+        Category = {"csa_gluke_slide"},
+        Bone = "W_Main",
+        Pos = Vector(0.5, -3.5, 6),
         Ang = Angle(90, 0, -90),
     },
     {
         PrintName = "MUZZLE",
         DefaultName = "Factory Flash Hider",
         Category = "muzzle",
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0.03, -2.5, 6.2),
+        Bone = "W_Main",
+        Pos = Vector(0, -3.15, 8),
         Ang = Angle(90, 0, -90),
     },
     {
         PrintName = "MAG",
         DefaultName = "Standard 30 Round",
-        Category = "m9_mag",
-        Bone = "ValveBiped.Base",
+        Category = "csa_gluke_mag",
+        Bone = "W_Main",
         Pos = Vector(0, 4, -2),
         Ang = Angle(90, 0, -90),
     },
@@ -430,7 +406,7 @@ SWEP.Attachments = {
         PrintName = "AMMO",
         DefaultName = "Standard FMJ",
         Category = {"ammo", "ammo_assault"},
-        Bone = "ValveBiped.Base",
+        Bone = "W_Main",
         Pos = Vector(0, 2.2, -2.7),
         Ang = Angle(90, 0, -90),
     },
@@ -438,9 +414,9 @@ SWEP.Attachments = {
         PrintName = "GRIP",
         DefaultName = "Factory Grip",
         ExcludeElements = {"gripstock"},
-        Category = "m9_grip",
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0, -1.1, -1.9),
+        Category = "csa_gluke_grip",
+        Bone = "W_Main",
+        Pos = Vector(0, -3.8, 1.5),
         Ang = Angle(90, 0, -90),
     }
 }

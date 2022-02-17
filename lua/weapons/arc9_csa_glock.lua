@@ -5,7 +5,7 @@ SWEP.Base = "arc9_base"
 SWEP.Spawnable = true
 SWEP.Category = "ARC-9"
 
-SWEP.PrintName = "ASTN 9X19MM Sidearm"
+SWEP.PrintName = "919SEAM"
 SWEP.TrueName = "Glock"
 
 SWEP.CamQCA = 3
@@ -349,12 +349,13 @@ SWEP.AttachmentElements = {
     },	
 }
 
+SWEP.Hook_TranslateAnimation = function(swep, anim)
+    local elements = swep:GetElements()
 
-SWEP.Hook_ModifyBodygroups = function(wep, data)
-    local vm = wep:GetOwner():GetViewModel()
-    if !vm then return end
-    if wep:HasElement("m9lp") then
-        vm:SetBodygroup(6, wep:HasElement("shortfs") and 3 or 1)
+    if elements["slog_csa_gluke_mag_x"] then
+        return anim .. "_x"
+    elseif elements["slog_csa_gluke_mag_drum"] then
+        return anim .. "_drum"
     end
 end
 

@@ -1,16 +1,11 @@
-att.PrintName = "PP-18A Conversion"
-att.Icon = nil ---Material("entities/slog_tuna_perk_fast.png", "mips smooth")
-att.Description = "Converts your PP-A9 into a machine pistol. Used by "
-att.Desc_Pros = {
-}
-att.Desc_Cons = {
-}
-att.AutoStats = true
-att.Slot = {"csa_gluke_slide"}
+ATT.PrintName = "Outom Conversion"
+ATT.CompactName = "OUTOM"
+ATT.Description = "Converts your 919SEAM into a machine pistol. Used by "
+ATT.Icon = Material("entities/arc9_ATT_m16_upper_gb.png", "mips smooth")
+ATT.AutoStats = true
+ATT.Category = {"csa_gluke_slide"}
 
-att.Add_BarrelLength = 2
-
-att.Override_Firemodes = {
+ATT.Override_Firemodes = {
     {
         Mode = 2,
     },

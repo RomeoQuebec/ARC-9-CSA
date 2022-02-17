@@ -1,9 +1,6 @@
-att.PrintName = "Stock3"
-att.Icon = nil ---Material("entities/slog_tuna_perk_fast.png", "mips smooth")
-att.Description = "Stable hounse"
-att.Desc_Pros = {
-}
-att.Desc_Cons = {
-}
-att.AutoStats = true
-att.Slot = {"csa_gluke_stock_roni"}
+ATT.PrintName = "ES Cipher90"
+ATT.CompactName = "ES90"
+ATT.Description = "Stable hounse"
+ATT.Icon = Material("entities/arc9_ATT_m16_upper_gb.png", "mips smooth")
+ATT.AutoStats = true
+ATT.Category = {"csa_gluke_stock_roni"}

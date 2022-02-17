@@ -1,16 +1,12 @@
-att.PrintName = "Foregrip"
-att.Icon = nil ---Material("entities/slog_tuna_perk_fast.png", "mips smooth")
-att.Description = "howo"
-att.Desc_Pros = {
-}
-att.Desc_Cons = {
-}
-att.AutoStats = true
-att.Slot = {"csa_gluke_grip"}
+ATT.PrintName = "Foregrip"
+ATT.Description = "howo"
+ATT.Icon = Material("entities/arc9_ATT_m16_upper_gb.png", "mips smooth")
+ATT.AutoStats = true
+ATT.Category = {"csa_gluke_grip"}
 
-att.ModelOffset = Vector(0, 0, -2)
+ATT.ModelOffset = Vector(0, 0, -2)
 
-att.LHIK = true
-att.LHIK_Priority = 1
+ATT.LHIK = true
+ATT.LHIK_Priority = 1
 
-att.Model = "models/weapons/arccw/atts/slog_csanal/grip_pistol.mdl"
+ATT.Model = "models/weapons/arccw/ATTs/slog_csanal/grip_pistol.mdl"

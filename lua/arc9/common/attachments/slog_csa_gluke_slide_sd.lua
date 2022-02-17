@@ -1,14 +1,11 @@
-att.PrintName = "SHHHHHhhhh h"
-att.Icon = nil ---Material("entities/slog_tuna_perk_fast.png", "mips smooth")
-att.Description = "quieter than your piss stream"
-att.Desc_Pros = {
-}
-att.Desc_Cons = {
-}
-att.AutoStats = true
-att.Slot = {"csa_gluke_slide"}
+ATT.PrintName = "SHHHHHhhhh h"
+ATT.CompactName = "SHH"
+ATT.Description = "quieter than your piss stream"
+ATT.Icon = Material("entities/arc9_ATT_m16_upper_gb.png", "mips smooth")
+ATT.AutoStats = true
+ATT.Category = {"csa_gluke_slide"}
 
-att.Add_BarrelLength = 4
+ATT.Add_BarrelLength = 4
 
-att.Silencer = true
-att.Override_MuzzleEffect = "muzzleflash_suppressed"
+ATT.Silencer = true
+ATT.Override_MuzzleEffect = "muzzleflash_suppressed"

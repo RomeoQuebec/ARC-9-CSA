@@ -1,12 +1,12 @@
 att.PrintName = "Tac Knife"
-att.Icon = nil ---Material("entities/slog_tuna_perk_fast.png", "mips smooth")
+ATT.CompactName = "KNIFE"
 att.Description = "london"
 att.Desc_Pros = {
 }
 att.Desc_Cons = {
 }
 att.AutoStats = true
-att.Slot = {"csa_gluke_grip"}
+att.Category = {"csa_gluke_grip"}
 att.Hidden = true
 att.ModelOffset = Vector(-10, 1, -2)
 

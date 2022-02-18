@@ -105,9 +105,6 @@ SWEP.Firemodes = {
     {
         Mode = 1,
         -- add other attachment modifiers
-    },
-    {
-        Mode = 0
     }
 }
 
@@ -266,12 +263,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -293,12 +290,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.6,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -315,7 +312,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.18,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
@@ -396,17 +393,17 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.89,
                 lhik = 1,
                 rhik = 1
             },
@@ -417,7 +414,7 @@ SWEP.Animations = {
 -------------------------- ATTACHMENTS
 
 SWEP.AttachmentElements = {	
-    ["rail"] = {Bodygroups = {{ 3, 1},},	},
+    ["slog_csa_gluke_rail"] = {Bodygroups = {{ 3, 1},},	},
     ["slog_csa_gluke_grip"] = {Bodygroups = {{ 4, 1},},},	
 	
     ["slog_csa_gluke_stock"] = {Bodygroups = {{5, 1},},},
@@ -477,7 +474,7 @@ end
 SWEP.Attachments = {
     {
         PrintName = "MOUNT",
-        Category = "mount_m9ch",
+        Category = "gluke_mount",
         Bone = "W_Main",
         ExcludeElements = {"flattop"},
         Pos = Vector(0, -4.65, 2),

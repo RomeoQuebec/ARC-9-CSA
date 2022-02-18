@@ -4,7 +4,7 @@ ATT.Description = "literally smg."
 ATT.Icon = Material("entities/arc9_ATT_m16_upper_gb.png", "mips smooth")
 ATT.AutoStats = true
 ATT.Category = {"csa_gluke_slide"}
-ATT.Override_Firemodes = {
+ATT.FiremodesOverride = {
     {
         Mode = 2,
     },
@@ -12,7 +12,6 @@ ATT.Override_Firemodes = {
         Mode = 0,
     },	
 }
-
 ATT.ModelOffset = Vector(0.5, 0, -2)
 
 ATT.LHIK = true

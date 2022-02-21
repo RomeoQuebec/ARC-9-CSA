@@ -3,7 +3,7 @@ AddCSLuaFile()
 SWEP.Base = "arc9_base"
 
 SWEP.Spawnable = true
-SWEP.Category = "ARC-9"
+SWEP.Category = "ARC-9 CSA"
 
 SWEP.PrintName = "Elite Pistol"
 SWEP.TrueName = "Beretta M9"

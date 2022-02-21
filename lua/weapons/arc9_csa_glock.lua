@@ -3,7 +3,7 @@ AddCSLuaFile()
 SWEP.Base = "arc9_base"
 
 SWEP.Spawnable = true
-SWEP.Category = "ARC-9"
+SWEP.Category = "ARC-9 CSA"
 
 SWEP.PrintName = "919SEAM"
 SWEP.TrueName = "Glock"
@@ -40,7 +40,7 @@ SWEP.Description = [[Who the fuck reads this anyways.]]
 
 end
 
-SWEP.ViewModel = "models/weapons/arccw/slog_csanal/c_gluke.mdl"
+SWEP.ViewModel = "models/weapons/arc9/slog_csanal/c_gluke.mdl"
 SWEP.WorldModel = "models/weapons/w_pis_m9.mdl"
 
 SWEP.Slot = 1

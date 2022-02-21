@@ -7,6 +7,6 @@ ATT.Category = {"csa_gluke_grip"}
 ATT.ModelOffset = Vector(0, 0, -2)
 
 ATT.LHIK = true
-ATT.LHIK_Priority = 1
+ATT.LHIK_Priority = 2
 
-ATT.Model = "models/weapons/arccw/ATTs/slog_csanal/grip_pistol.mdl"
+ATT.Model = "models/weapons/arc9/slog_csanal/atts/grip_pistol.mdl"

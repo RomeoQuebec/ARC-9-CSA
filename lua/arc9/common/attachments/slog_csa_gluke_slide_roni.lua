@@ -55,6 +55,6 @@ ATT.Sights = {
 ATT.ModelOffset = Vector(0.5, 0, -2)
 
 ATT.LHIK = true
-ATT.LHIK_Priority = -2
+ATT.LHIK_Priority = 1
 
-ATT.Model = "models/weapons/arccw/ATTs/slog_csanal/grip_roni.mdl"
+ATT.Model = "models/weapons/arc9/slog_csanal/atts/grip_roni.mdl"

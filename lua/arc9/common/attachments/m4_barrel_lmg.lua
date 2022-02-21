@@ -23,6 +23,7 @@ ATT.RecoilPatternDriftMult = 0.75
 ATT.RecoilAutoControlMult = 1.15
 
 ATT.LHIK = true
+ATT.LHIK_Priority = 1
 
 ATT.ModelOffset = Vector(0, 0, -0.5)
 ATT.ModelAngleOffset = Angle(0, 0, 180)

@@ -5,47 +5,58 @@ SWEP.Base = "arc9_base"
 SWEP.Spawnable = true
 SWEP.Category = "ARC-9 CSA"
 
-SWEP.PrintName = "Elite Pistol"
-SWEP.TrueName = "Beretta M9"
+SWEP.PrintName = "Clarion 5.56"
+SWEP.TrueName = "Retargeted FAMAS"
 
 SWEP.CamQCA = 3
-SWEP.CamOffsetAng = Angle(0, 0, 90)
+SWEP.CamOffsetAng = Angle(0, 0, 0)
 
-SWEP.Class = "Pistol"
+SWEP.HideBones = {
+    "W_Mag2"
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "W_Mag"
+    },
+    [2] = {
+        "W_Mag2"
+    }
+}
+
+SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
-    Manufacturer = "Fabbrica d'Armi Pietro Beretta S.p.A.",
-    Calibre = "9x19mm Parabellum",
-    Mechanism = "Striker-fired",
-    Country = "Italy",
-    Year = "1985"
+    Manufacturer = "MAS",
+    Calibre = "5.56x45mm NATO",
+    Mechanism = "Gas-Operated Rotating Bolt",
+    Country = "France",
+    Year = "1978"
 }
 
 SWEP.Credits = {
     Author = "Arqu",
 }
 
-SWEP.Description = [[The Beretta M9, officially the Pistol, Semiautomatic, 9mm, M9, is the designation for the Beretta 92FS semi-automatic Pistol used by the United States Armed Forces. The M9 was adopted by the United States military as their service Pistol in 1985.]]
+SWEP.Description = [[The FAMAS is a bullpup assault rifle designed and manufactured in France by MAS in 1978, a year after the Austrian Steyr AUG. It is known by French troops as Le Clairon (The Bugle) due to its distinctive shape.]]
 
 if !ARC9:UseTrueNames() then
 
 SWEP.Trivia = {
     Manufacturer = "The Classic & Superb Firearms Company",
-    Calibre = "9x19mm Parabellum",
-    Mechanism = "Striker-fired",
-    Country = "Italy",
-    Year = "1985"
+    Calibre = "5.56x45mm NATO",
+    Mechanism = "Gas-Operated Rotating Bolt",
+    Country = "United States of America",
+    Year = "1998"
 }
 
-SWEP.Description = [[Who the fuck reads this anyways.]]
+SWEP.Description = [[Too lazy to make animations for this one.]]
 
 end
 
-SWEP.ViewModel = "models/weapons/arc9/csa/c_elite.mdl"
-SWEP.WorldModel = "models/weapons/w_pis_m9.mdl"
+SWEP.ViewModel = "models/weapons/arc9/csa/c_clarion_retarget.mdl"
+SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
 
-SWEP.Slot = 1
-
-SWEP.DrawCrosshair = true
+SWEP.Slot = 2
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
@@ -54,7 +65,7 @@ SWEP.WorldModelOffset = {
     Scale = 1
 }
 
-SWEP.DefaultBodygroups = "0000000000000000000000"
+SWEP.DefaultBodygroups = "0000000400000000000000"
 
 -------------------------- DAMAGE PROFILE
 
@@ -77,7 +88,7 @@ SWEP.PhysBulletMuzzleVelocity = 25000
 SWEP.Ammo = "smg1" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 12 -- Self-explanatory.
+SWEP.ClipSize = 25 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
@@ -91,7 +102,7 @@ SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 800
+SWEP.RPM = 1100
 
 -- Works different to ArcCW
 
@@ -103,15 +114,18 @@ SWEP.RPM = 800
 -- n: n-round burst.
 SWEP.Firemodes = {
     {
-        Mode = 1,
+        Mode = 3,
         -- add other attachment modifiers
+    },
+    {
+        Mode = -1
     }
 }
 
 SWEP.AutoBurst = false -- Hold fire to keep firing bursts
 SWEP.PostBurstDelay = 0.05
 SWEP.RunAwayBurst = false -- Burst will keep firing until all of the burst has been expended.
-SWEP.NonResetBurst = true -- Annoying behaviour where you have to shoot ALL THREE BULLETS of a burst before it resets. Supposedly realistic for the m9.
+SWEP.NonResetBurst = true -- Annoying behaviour where you have to shoot ALL THREE BULLETS of a burst before it resets. Supposedly realistic for the m4.
 
 -- Use this hook to modify features of a firemode.
 -- SWEP.Hook_P_ModifyFiremode = function(self, firemode) return firemode end
@@ -176,19 +190,19 @@ SWEP.TracerColor = Color(255, 225, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-5.66, -5.625, 1.889),
-    Ang = Angle(0, 0, 0),
+    Pos = Vector(-4.341, 5, -1.719),
+    Ang = Angle(0, 0, -5),
     Midpoint = { -- Where the gun should be at the middle of it's irons
-        Pos = Vector(0, 15, -4),
-        Ang = Angle(0, 0, -45),
+        Pos = Vector(-4.341, 5, 0.319),
+        Ang = Angle(0, 0, -5),
     },
     Magnification = 1.1,
 }
 
-SWEP.SprintAng = Angle(-0.038, 47.219, 0)
-SWEP.SprintPos = Vector(0.597, 0, -12.742)
+SWEP.SprintAng = Angle(30, -30, -15)
+SWEP.SprintPos = Vector(2, 3, -1)
 
-SWEP.ActivePos = Vector(0, 2, 0)
+SWEP.ActivePos = Vector(0, 3, 0.5)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 -------------------------- HoldTypes
@@ -198,81 +212,79 @@ SWEP.HoldTypeSprint = "passive"
 SWEP.HoldTypeHolstered = "passive"
 SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
-SWEP.HoldTypeBlindfire = "Pistol"
+SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_REVOLVER
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_SMG1
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
+SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_AR2
 SWEP.AnimDraw = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "muzzleflash_pistol" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "muzzleflash_3" -- Used for some muzzle effects.
 
-SWEP.ShellModel = "models/shells/shell_9mm.mdl"
+SWEP.ShellModel = "models/shells/shell_556.mdl"
 SWEP.ShellCorrectAng = Angle(0, 180, 0)
-SWEP.ShellScale = 1.5
+SWEP.ShellScale = 1.25
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 -------------------------- SOUNDS
 
-local path = ")^weapons/elite/"
-SWEP.FirstShootSound = path .. "elite-1.wav"
-SWEP.ShootSound = path .. "elite-1.wav"
-SWEP.DistantShootSound = "weapons/m16a2/dist.ogg"
-SWEP.ShootSoundSilencedFirst = "weapons/usp/usp1.wav"
-SWEP.ShootSoundSilenced = "weapons/usp/usp1.wav"
-SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
+SWEP.FirstShootSound = "weapons/famas/famas-1.wav"
+SWEP.ShootSound = "weapons/famas/famas-1.wav"
+SWEP.DistantShootSound = "weapons/arccw_slog/fortuna/rifle/echo.wav"
+SWEP.ShootSoundSilencedFirst = "weapons/m4a1/m4a1-1.wav"
+SWEP.ShootSoundSilenced = "weapons/m4a1/m4a1-1.wav"
+SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "arc9/firemode.wav"
 
-/*
  SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
 
-    if elements["m9_mag_drum"] then
+    if elements["m4_mag_drum"] then
         return anim .. "_drum"
-    elseif elements["m9_mag_tape"] then
+    elseif elements["m4_mag_tape"] then
         return anim .. "_tape"
-    elseif elements["m9_mag_belt"] then
+    elseif elements["m4_mag_belt"] then
         return anim .. "_belt"
     end
 end 
-*/
 
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
     ["draw"] = {
-        Source = "deploy",
-        EventTable = {
-            {s = "weapons/glock/glock_slideback.wav", t = 0.0},
-            {s = path .. "elite_sliderelease.wav", t = 0.5},
-        },
+        Source = "draw",
     },
-    
     ["fire"] = {
         Source = "fire",
         Time = 13 / 30,
         ShellEjectAt = 0.01,
     },
     ["fire_iron"] = {
-        Source = "fire_ads",
+        Source = "iron",
         Time = 13 / 30,
         ShellEjectAt = 0.01,
     },
     -- 30 Round Reloads --
 
     ["reload"] = {
-        Source = "reload",
+        Source = "wet",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 1.75,
+        Time = 2.05,
         EventTable = {
-            {s = path .. "elite_clipout.wav", t = 0.0},
-            {s = path .. "elite_leftclipin.wav", t = 0.75},
-        },
-        MinProgress = 1.5,
+						{s = "weapons/arccw_slog/fortuna/rifle/foley.wav", 		t = 0},					
+						{s = "weapons/famas/famas_clipout.wav", 			t = 0.8},
+						{s = "weapons/arccw_slog/fortuna/rifle/foley2.wav", 		t = 0.4},						
+						{s = "weapons/famas/famas_clipin.wav", 			t = 1.25},						
+						{s = "weapons/arccw_slog/fortuna/rifle/foley3.wav", 		t = 2},	
+                        {hide = 2, t = 0},
+                        {hide = 0, t = 0.45},				
+					},				
+        MinProgress = 72/40,
         LastClip1OutTime = 0.9,
+        HideBoneIndex = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -297,14 +309,21 @@ SWEP.Animations = {
         },
     },
     ["reload_empty"] = {
-        Source = "reload_dry",
+        Source = "dry",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 2,
+        Time = 2.575,
+        HideBoneIndex = 1,
         EventTable = {
-            {s = path .. "elite_clipout.wav", t = 0.0},
-            {s = path .. "elite_leftclipin.wav", t = 0.8},
-            {s = path .. "elite_sliderelease.wav", t = 1.5},
-        },
+						{s = "weapons/arccw_slog/fortuna/rifle/foley.wav", 		t = 0},
+						{s = "weapons/arccw_slog/fortuna/rifle/4bolt1.wav", 		t = 0.275},						
+						{s = "weapons/famas/famas_clipout.wav", 			t = 1.15},
+						{s = "weapons/arccw_slog/fortuna/rifle/foley2.wav", 		t = 0.475},						
+						{s = "weapons/famas/famas_clipin.wav", 			t = 1.6},
+						{s = "weapons/arccw_slog/fortuna/rifle/4bolt2.wav", 		t = 1.925},							
+						{s = "weapons/arccw_slog/fortuna/rifle/foley3.wav", 		t = 2.575},		
+                        {hide = 2, t = 0},
+                        {hide = 0, t = 0.8},				
+					},
         MinProgress = 2,
         LastClip1OutTime = 0.7,
         IKTimeLine = {
@@ -332,41 +351,29 @@ SWEP.Animations = {
         
     },
 }
-
 -------------------------- ATTACHMENTS
 
 SWEP.AttachmentElements = {
-    ["m9_barrel_raff"] = {
+    ["famas_mag_30"] = {
         Bodygroups = {
-            {8, 1},
-            {11, 1}
+            {3, 1}
         }
     },
-    ["m9_low_raff"] = {
+    ["felin"] = {
         Bodygroups = {
-            {0, 1}
+            {1, 1},
+            {4, 2},
+            {2, 1}
         }
     },
-    ["m9_conv_ext"] = {
+    ["altchandle"] = {
         Bodygroups = {
-            {10, 2},
-            {11, 1}
+            {2, 1}
         },
     },
-    ["m9_stock"] = {
+    ["famas_rail"] = {
         Bodygroups = {
-            {11, 1}
-        },
-    },
-    ["m9_no_sights"] = {
-        Bodygroups = {
-            {5, 0}
-        },
-    },
-    ["m9_conv_alyx"] = {
-        Bodygroups = {
-            {10, 1},
-            {11, 1}
+            {4, 1}
         }
     }
 }
@@ -374,7 +381,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local vm = wep:GetOwner():GetViewModel()
     if !vm then return end
-    if wep:HasElement("m9lp") then
+    if wep:HasElement("m4lp") then
         vm:SetBodygroup(6, wep:HasElement("shortfs") and 3 or 1)
     end
 end
@@ -382,62 +389,54 @@ end
 SWEP.Attachments = {
     {
         PrintName = "MOUNT",
-        Category = "mount_m9ch",
-        Bone = "ValveBiped.Base",
-        ExcludeElements = {"flattop"},
-        Pos = Vector(0, -3.15, 0),
-        Ang = Angle(90, 0, -90),
-    },
-    {
-        PrintName = "NOSTOCK",
-        DefaultName = "No Stock",
-        Category = {"m9_stock", "bt_stock"},
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0, 3, -5.5),
+        Category = "mount_m4ch",
+        Bone = "W_Main",
+        ExcludeElements = {"csa_famas_rail"},
+        Pos = Vector(0, -6.15, 3.5),
         Ang = Angle(90, 0, -90),
     },
     {
         PrintName = "BARREL",
-        DefaultName = "RAI Ribbed 20\" Barrel",
+        DefaultName = "Factory systems",
         DefaultCompactName = "FACTORY",
-        DefaultName_TrueName = "Factory Barrel",
-        DefaultCompactName_TrueName = "20\"A2",
-        Category = {"m9_barrel"},
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0, -2.5, 4),
+        DefaultName_TrueName = "Factory systems",
+        DefaultCompactName_TrueName = "FACTORY",
+        Category = {"famas_conv"},
+        Bone = "W_Main",
+        Pos = Vector(0, -1, 8),
         Ang = Angle(90, 0, -90),
     },
     {
         PrintName = "MUZZLE",
         DefaultName = "Factory Flash Hider",
         Category = "muzzle",
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0.03, -2.5, 6.2),
+        Bone = "W_Main",
+        Pos = Vector(0, -1.75, 20),
         Ang = Angle(90, 0, -90),
     },
     {
         PrintName = "MAG",
-        DefaultName = "Standard 30 Round",
-        Category = "m9_mag",
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0, 4, -2),
+        DefaultName = "Standard 20 Round",
+        Category = "m4_mag",
+        Bone = "W_Main",
+        Pos = Vector(0, 3, -7),
         Ang = Angle(90, 0, -90),
     },
     {
         PrintName = "AMMO",
         DefaultName = "Standard FMJ",
         Category = {"ammo", "ammo_assault"},
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0, 2.2, -2.7),
+        Bone = "W_Main",
+        Pos = Vector(0, 0, -7),
         Ang = Angle(90, 0, -90),
     },
     {
         PrintName = "GRIP",
         DefaultName = "Factory Grip",
         ExcludeElements = {"gripstock"},
-        Category = "m9_grip",
-        Bone = "ValveBiped.Base",
-        Pos = Vector(0, -1.1, -1.9),
+        Category = "m4_grip",
+        Bone = "W_Main",
+        Pos = Vector(0, 2, -0.5),
         Ang = Angle(90, 0, -90),
-    }
+    },
 }

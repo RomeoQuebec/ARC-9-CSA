@@ -35,7 +35,7 @@ SWEP.Trivia = {
     Calibre = "5.56x45mm NATO",
     Mechanism = "Gas-Operated Rotating Bolt",
     Country = "United States of America",
-    Year = "1994"
+    Year = "1998"
 }
 
 SWEP.Description = [[Who the fuck reads this anyways.]]
@@ -196,7 +196,7 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "shotgun"
+SWEP.HoldType = "ar2"
 SWEP.HoldTypeSprint = "passive"
 SWEP.HoldTypeHolstered = "passive"
 SWEP.HoldTypeSights = "ar2"

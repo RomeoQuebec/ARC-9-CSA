@@ -49,8 +49,8 @@ SWEP.DrawCrosshair = true
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos = Vector(-5, -1.5, -3.5),
-    ang = Angle(-10, 0, 180),
+    Pos = Vector(-7.5, 4, -7.5),
+    Ang = Angle(-5, 0, 180),
     Scale = 1
 }
 
@@ -193,15 +193,15 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "shotgun"
+SWEP.HoldType = "ar2"
 SWEP.HoldTypeSprint = "passive"
 SWEP.HoldTypeHolstered = "passive"
 SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "Pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_PISTOL
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_REVOLVER
+SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_SMG1
 SWEP.AnimDraw = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
 -------------------------- EFFECTS
